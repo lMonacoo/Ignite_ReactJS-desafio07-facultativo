@@ -1,4 +1,7 @@
-import Head from 'next/head';
+import { Flex } from '@chakra-ui/react'
+import Head from 'next/head'
+import { Banner } from '../Components/Banner'
+import { Header } from '../Components/Header'
 
 export default function Home(): JSX.Element {
   return (
@@ -7,7 +10,10 @@ export default function Home(): JSX.Element {
         <title>WorldTrip</title>
       </Head>
 
-      <h1>Home</h1>
+      <Flex h="100vh" direction="column">
+        <Header />
+        <Banner />
+      </Flex>
     </>
-  );
+  )
 }
