@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import { Flex, Image, Icon, CloseButton } from '@chakra-ui/react'
+import { CloseButton, Flex, Icon, Image } from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router'
+import Link from 'next/link'
 import { FiChevronLeft } from 'react-icons/fi'
 
 export function Header(): JSX.Element {
   const { asPath } = useRouter()
 
   return (
-    <Flex w="100%" py="6" px="8.75rem" align="center">
+    <Flex w="100%" py={['3', '4', '6']} px={['0', '0', '8.75rem']} align="center">
       {asPath !== '/' && (
         <Link href="/" passHref>
           <CloseButton size="sm">
@@ -15,7 +15,7 @@ export function Header(): JSX.Element {
           </CloseButton>
         </Link>
       )}
-      <Image m="0 auto" src="/images/Logo.svg" />
+      <Image m="0 auto" w={['150px', '150px', 'auto']} src="/images/Logo.svg" />
     </Flex>
   )
 }

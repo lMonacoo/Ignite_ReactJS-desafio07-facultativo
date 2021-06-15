@@ -8,7 +8,6 @@
   "extends": [
     "airbnb",
     "eslint:recommended",
-    "simple-import-sort", // Prettier Imports
     "plugin:prettier/recommended", // Prettier plugin
     "plugin:@typescript-eslint/recommended", // TypeScript rules
     "plugin:react/recommended", // React rules
@@ -18,35 +17,53 @@
   "globals": {
     "React": "readonly"
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier", "simple-import-sort"],
   // END PLUGINS/EXTENDS -------------------------------
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "ecmaFeatures": { "jsx": true }, "ecmaVersion": 12, "sourceType": "module" },
   "ignorePatterns": ["node_modules/*", ".next/*", ".out/*"],
 
-  "settings": { "react": { "version": "detect" }, "import/resolver": { "typescript": {} } },
-
-  // RULES -------------------------------
+  "settings": {
+    "react": { "version": "detect" },
+    "import/extensions": [".js", ".ts", ".jsx"],
+    "import/resolver": { "typescript": {} }
+  },
   "rules": {
     "camelcase": "off",
-    "import/no-duplicates": "off",
+    "no-use-before-define": "off",
+    "no-shadow": "off",
+
     "react/jsx-props-no-spreading": "off",
-    "prettier/prettier": "error",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/require-default-props": "off",
 
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
-    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+    "prettier/prettier": "error",
+    "quotes": ["error", "single"],
+    "max-len": ["error", { "code": 120, "ignoreUrls": true }],
+    "no-confusing-arrow": ["error", { "allowParens": true }],
+
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+
+    "import/no-duplicates": "off",
+    "import/no-unresolved": "off",
     "import/extensions": ["error", "ignorePackages", { "ts": "never", "tsx": "never" }],
-    "no-shadow": "off",
+    "import/prefer-default-export": "off",
+
+    "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/no-shadow": ["error"],
-    "max-len": ["warn", { "code": 100 }],
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      { "allowExpressions": true, "allowConciseArrowFunctionExpressionsStartingWithVoid": true }
+    ],
+
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "import/prefer-default-export": "off",
+
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -54,12 +71,6 @@
         "specialLink": ["hrefLeft", "hrefRight"],
         "aspects": ["invalidHref", "preferButton"]
       }
-    ],
-    "@typescript-eslint/no-unused-vars": ["error"],
-    "@typescript-eslint/explicit-function-return-type": [
-      "warn",
-      { "allowExpressions": true, "allowConciseArrowFunctionExpressionsStartingWithVoid": true }
     ]
   }
-  // RULES END -------------------------------
 }

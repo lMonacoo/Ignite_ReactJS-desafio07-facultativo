@@ -1,6 +1,12 @@
-import { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
-import { theme } from '../styles/theme';
+import 'swiper/swiper-bundle.css'
+import 'swiper/components/pagination/pagination.min.css'
+import 'swiper/components/navigation/navigation.min.css'
+import '../styles/swiper.css'
+
+import { ChakraProvider } from '@chakra-ui/react'
+import { AppProps } from 'next/app'
+
+import { theme } from '../styles/theme'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
@@ -10,4 +16,4 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   )
 }
 
-export default MyApp;
+export default MyApp
