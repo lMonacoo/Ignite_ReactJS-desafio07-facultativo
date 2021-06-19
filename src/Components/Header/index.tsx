@@ -7,7 +7,7 @@ export function Header(): JSX.Element {
   const { asPath } = useRouter()
 
   return (
-    <Flex w="100%" py={['3', '4', '6']} px={['0', '0', '8.75rem']} align="center">
+    <Flex w="100%" py={['3', '4', '6']} px={['5', '5', '8.75rem']} align="center">
       {asPath !== '/' && (
         <Link href="/" passHref>
           <CloseButton size="sm">

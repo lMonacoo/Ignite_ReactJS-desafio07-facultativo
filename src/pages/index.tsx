@@ -10,7 +10,7 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Head>
-        <title>WorldTrip</title>
+        <title>WorldTrip | Home</title>
       </Head>
 
       <Flex w="100%" direction="column" align="center">
@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
           Então escolha seu continente
         </Text>
 
-        <Swiper px={['2', '4', '7', '24']} pb="10" />
+        <Swiper px={['0', '0', '5', '20']} pb="10" />
       </Flex>
     </>
   )

@@ -34,16 +34,33 @@ const sizes = {
   },
 }
 
+const components = {
+  Popover: {
+    variants: {
+      responsive: {
+        popper: {
+          maxWidth: 'unset',
+          width: 'unset',
+          top: 0,
+          left: 0,
+        },
+      },
+    },
+  },
+}
+
 export const theme = extendTheme({
   breakpoints,
   colors,
   fonts,
   sizes,
+  components,
   styles: {
     global: {
       body: {
         color: 'dark.700',
         bg: 'light.50',
+        overflowX: 'hidden',
       },
     },
   },

@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
+import Link from 'next/link'
 
 interface SwiperSlideProps {
   heading: string
@@ -8,8 +9,9 @@ interface SwiperSlideProps {
 
 export function SwiperSlide({ heading, text, imageTerm }: SwiperSlideProps): JSX.Element {
   return (
-    <>
+    <Link passHref href={`/continents/${imageTerm}`}>
       <Flex
+        as="a"
         bgImage={`url(https://source.unsplash.com/random/?${imageTerm},city)`}
         bgSize="cover"
         bgPosition="center"
@@ -27,6 +29,6 @@ export function SwiperSlide({ heading, text, imageTerm }: SwiperSlideProps): JSX
           {text}
         </Text>
       </Flex>
-    </>
+    </Link>
   )
 }

@@ -1,6 +1,6 @@
 import { Box, Container, Flex, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react'
 
-export const Banner: React.FC = () => {
+export function Banner(): JSX.Element {
   const isPlaneVisible = useBreakpointValue({
     base: false,
     md: true,
@@ -51,5 +51,3 @@ export const Banner: React.FC = () => {
     </Container>
   )
 }
-
-// '0', sm'320px', md'768px', lg'960px', xl'1200px', 2xl'1400px'

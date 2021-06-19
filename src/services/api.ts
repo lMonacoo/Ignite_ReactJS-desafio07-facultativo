@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'https://wft-geo-db.p.rapidapi.com/v1/geo',
+  baseURL: process.env.REACT_APP_API_ENDPOINT,
 })
