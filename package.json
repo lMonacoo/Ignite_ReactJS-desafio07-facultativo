@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "server": "json-server --host 192.168.1.112 --watch ./src/services/server.json --port 4000",
+    "server": "json-server --host YOUR_ID --watch ./src/services/server.json --port 4000",
     "lint": "eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
